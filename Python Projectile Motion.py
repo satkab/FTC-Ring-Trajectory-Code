@@ -8,12 +8,12 @@ pt, pvy, py = [], [], []
 
 
 #   ================================================    set your parameters here    ================================================
-v0 = 5.0        # initial velocity in miles per hour
+v0 = 2.2        # initial velocity in meters per second
 angle = 15.0    # launch angle in degrees
-x0 = 0.0        # initial X position in inches (usually 0)
-y0 = 16.0       # initial Y position in inches
+x0 = 0.0        # initial X position in meters (usually 0)
+y0 = 0.41       # initial Y position in meters
 g = -9.81       # acceleration due to gravity in meters per second squared
-ar = 0.4        # air resistance (0 if neglecting air resistance)
+ar = 0        # air resistance (0 if neglecting air resistance)
 dt = 0.05       # time increment in seconds
 
 
@@ -44,7 +44,8 @@ while y >= 0:
     y = y + (vy * dt)                       # new y position = old y position +  y velocity * distance
     vx = vx - (ar * vx * dt)                # new x velocity = old x velocity - air resistance
     vy = vy + (g * dt) - (ar * vy * dt)     # new y velocity = old y velocity + gravity - air resistance
-    v = math.sqrt(vx ** 2 + vy ** 2)        # new velocity = square root of x velocity ** 2 + y velocity ** 2
+    
+#v = math.sqrt(vx ** 2 + vy ** 2)   === commented because this line of code was unused anywhere else ===    new velocity= square root of x velocity ** 2 + y velocity ** 2
 
 
 #   ====================================================    create the plots    ====================================================
